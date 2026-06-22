@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* 
+ * Custom styles to make Blockly look more like Scratch 3.0 
+ */
+
+/* The Toolbox container */
+.blocklyToolboxDiv {
+  background-color: #FFFFFF !important;
+  border-right: 1px solid #CECDCE;
+  padding: 0 !important;
+  width: 72px !important; /* Fixed thin width for the categories */
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+/* Hide the default scrollbar in the toolbox */
+.blocklyToolboxDiv::-webkit-scrollbar {
+  display: none;
+}
+.blocklyToolboxDiv {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* The individual categories in the toolbox */
+.blocklyTreeRow {
+  padding: 8px 4px !important;
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
+  cursor: pointer;
+  background-color: transparent !important;
+  border: none !important;
+  border-left: 2px solid transparent !important;
+}
+
+.blocklyTreeRow:hover {
+  background-color: transparent !important;
+}
+
+.blocklyTreeSelected .blocklyTreeRow {
+  background-color: #E8EBED !important;
+  border-left: 2px solid transparent !important;
+}
+
+/* Magic to turn category icons into colored circles like Scratch */
+.blocklyTreeIcon {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  background-image: none !important;
+  margin: 0 0 4px 0 !important;
+  display: block !important;
+  opacity: 1 !important;
+}
+
+/* Hide the expand/collapse icon */
+.blocklyTreeIconClosed, .blocklyTreeIconOpen, .blocklyTreeIconNone {
+  display: none !important;
+}
+
+.blocklyTreeLabel {
+  font-size: 11px !important;
+  font-weight: normal !important;
+  text-align: center;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  color: #575E75 !important;
+}
+
+/* Category Specific Colors */
+.scratch-category-motion .blocklyTreeIcon { background-color: #4C97FF !important; border: 1px solid #3373CC !important; }
+.scratch-category-looks .blocklyTreeIcon { background-color: #9966FF !important; border: 1px solid #774DCB !important; }
+.scratch-category-sound .blocklyTreeIcon { background-color: #CF63CF !important; border: 1px solid #C94FC9 !important; }
+.scratch-category-events .blocklyTreeIcon { background-color: #FFBF00 !important; border: 1px solid #E6AC00 !important; }
+.scratch-category-control .blocklyTreeIcon { background-color: #FFAB19 !important; border: 1px solid #CF8B17 !important; }
+.scratch-category-sensing .blocklyTreeIcon { background-color: #5CB1D6 !important; border: 1px solid #2E8EB8 !important; }
+.scratch-category-operators .blocklyTreeIcon { background-color: #59C059 !important; border: 1px solid #389438 !important; }
+.scratch-category-variables .blocklyTreeIcon { background-color: #FF8C1A !important; border: 1px solid #DB6E00 !important; }
+.scratch-category-myblocks .blocklyTreeIcon { background-color: #FF6680 !important; border: 1px solid #FF3355 !important; }
+
+/* Selected category text colors */
+.scratch-category-motion.blocklyTreeSelected .blocklyTreeLabel { color: #4C97FF !important; font-weight: bold !important; }
+.scratch-category-looks.blocklyTreeSelected .blocklyTreeLabel { color: #9966FF !important; font-weight: bold !important; }
+.scratch-category-sound.blocklyTreeSelected .blocklyTreeLabel { color: #CF63CF !important; font-weight: bold !important; }
+.scratch-category-events.blocklyTreeSelected .blocklyTreeLabel { color: #FFBF00 !important; font-weight: bold !important; }
+.scratch-category-control.blocklyTreeSelected .blocklyTreeLabel { color: #FFAB19 !important; font-weight: bold !important; }
+.scratch-category-sensing.blocklyTreeSelected .blocklyTreeLabel { color: #5CB1D6 !important; font-weight: bold !important; }
+.scratch-category-operators.blocklyTreeSelected .blocklyTreeLabel { color: #59C059 !important; font-weight: bold !important; }
+.scratch-category-variables.blocklyTreeSelected .blocklyTreeLabel { color: #FF8C1A !important; font-weight: bold !important; }
+.scratch-category-myblocks.blocklyTreeSelected .blocklyTreeLabel { color: #FF6680 !important; font-weight: bold !important; }
+
+
+/* The flyout background */
+.blocklyFlyoutBackground {
+  fill: #F9F9F9 !important;
+  stroke: #CECDCE !important;
+  stroke-width: 1px;
+}
+
+/* Scale adjustments for fields strictly */
+.blocklyFieldText {
+  font-family: "Helvetica Neue", Helvetica, sans-serif !important;
+}
+

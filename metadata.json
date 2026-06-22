@@ -1,0 +1,6 @@
+{
+  "name": "Scratch Clone",
+  "description": "A Blockly-based visual programming environment styled like Scratch 3.0.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
