@@ -220,6 +220,7 @@ export default function BlocklyEditor() {
       workspace.current = Blockly.inject(blocklyDiv.current, {
         toolbox: toolbox,
         renderer: 'zelos',
+        media: 'https://unpkg.com/blockly/media/',
         move: {
           scrollbars: true,
           drag: true,
