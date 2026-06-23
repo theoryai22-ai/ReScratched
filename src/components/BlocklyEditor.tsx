@@ -3,6 +3,21 @@ import * as Blockly from 'blockly';
 import { defineScratchBlocks } from './scratchBlocks';
 import { projectState, subscribeSpriteState, updateTarget, getActiveTarget } from '../store';
 
+// This will be called inside useEffect
+const forceTextBlockWhite = () => {
+  if (Blockly && Blockly.Blocks && Blockly.Blocks['text']) {
+    const originalInit = Blockly.Blocks['text'].init;
+    // Only patch once
+    if (!(originalInit as any).__patched) {
+      Blockly.Blocks['text'].init = function(this: Blockly.Block) {
+        if (originalInit) originalInit.call(this);
+        this.setColour('#FFFFFF');
+      };
+      (Blockly.Blocks['text'].init as any).__patched = true;
+    }
+  }
+};
+
 const toolbox = {
   kind: 'categoryToolbox',
   contents: [
@@ -147,6 +162,7 @@ export default function BlocklyEditor() {
 
   useEffect(() => {
     defineScratchBlocks();
+    forceTextBlockWhite();
 
     if (blocklyDiv.current && !workspace.current) {
       
@@ -164,6 +180,11 @@ export default function BlocklyEditor() {
           },
         },
         blockStyles: {
+          text_blocks: {
+            colourPrimary: '#FFFFFF',
+            colourSecondary: '#FFFFFF',
+            colourTertiary: '#FFFFFF',
+          },
           procedure_blocks: {
             colourPrimary: '#FF6680',
             colourSecondary: '#FF4D6A',

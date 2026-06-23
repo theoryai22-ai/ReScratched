@@ -6,7 +6,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ScratchWorkspace from './components/ScratchWorkspace';
 import AppIntro from './components/AppIntro';
-import firstImpressionAudio from './First Impression (2).mp3';
+import firstImpressionAudio from './first-impression.mp3';
 
 export default function App() {
   const [introFinished, setIntroFinished] = useState(false);

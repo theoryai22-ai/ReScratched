@@ -107,3 +107,22 @@
   font-family: "Helvetica Neue", Helvetica, sans-serif !important;
 }
 
+/* Remove default orange/yellow focus outlines from text inputs and textareas, but leave number inputs alone */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+textarea:focus,
+.blocklyHtmlInput:focus,
+.blocklyHtmlTextArea:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(76, 151, 255, 0.5) !important;
+  border-color: #4C97FF !important;
+}
+
+/* If the user meant Blockly's native block selection glow (which is orange/yellow), change it to blue for text field inputs if possible */
+.blocklySelected>.blocklyPath,
+.blocklySelected>.blocklyPathLight {
+  stroke: rgba(76, 151, 255, 0.8) !important; 
+}
+
